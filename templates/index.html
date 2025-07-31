@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>自动生成标书平台</title>
+</head>
+<body>
+  <h2>填写人员信息，自动生成标书附件</h2>
+  <form method="POST">
+    <label>项目经理：</label><input type="text" name="pm"><br><br>
+    <label>技术负责人：</label><input type="text" name="tech"><br><br>
+    <label>质量员：</label><input type="text" name="quality"><br><br>
+    <label>安全员：</label><input type="text" name="safety"><br><br>
+    <button type="submit">生成Word文件</button>
+  </form>
+
+  {% if file_link %}
+    <p>✅ 生成成功：<a href="{{ file_link }}" download>点击下载</a></p>
+  {% endif %}
+</body>
+</html>
